@@ -4,11 +4,11 @@ export const Main = styled.div`
   overflow: hidden;
   display: grid;
   position: fixed;
-  z-index: 3; /* Sit on top */
+  z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
   grid-template-rows: 120px auto 50px;
   grid-template-columns: 50px auto 50px;
@@ -40,7 +40,6 @@ export const CloseButton = styled.div`
   color: #f1f1f1;
   font-size: 25px;
   transition: 0.3s;
-  padding-right: 20px;
 `;
 
 export const LeftArrow = styled.div`
@@ -49,7 +48,7 @@ export const LeftArrow = styled.div`
   color: #8e9490;
   align-self: center;
   justify-self: start;
-  padding-left: 20px;
+  padding-left: 10px;
   &:hover {
     font-size: 120%;
   }
@@ -61,7 +60,7 @@ export const RightArrow = styled.div`
   color: #8e9490;
   align-self: center;
   justify-self: end;
-  padding-right: 20px;
+  padding-right: 10px;
   &:hover {
     font-size: 120%;
   }

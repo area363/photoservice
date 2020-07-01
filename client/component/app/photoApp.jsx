@@ -18,12 +18,11 @@ class PhotoApp extends React.Component {
 
   componentDidMount() {
     const url = window.location.pathname;
-    console.log(url);
-    if (url === '/') {
-      this.getPhotos(30);
+    if (url === "/") {
+      console.log("Welcome!");
     } else {
-      const id = url.slice(1, url.length - 1);
-      this.getPhotos(id);
+    const id = url.slice(1, url.length - 1);
+    this.getPhotos(id);
     }
   }
 
@@ -72,6 +71,7 @@ class PhotoApp extends React.Component {
       }
       return (
         <Main>
+          <Navbar></Navbar>
           <PhotoBanner>
             {this.state.photos.map((photo, index) => {
               return (

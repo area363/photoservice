@@ -1,3 +1,4 @@
+  
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -18,6 +19,7 @@ app.use((req, res, next) => {
 
 app.use(express.static(__dirname + '/../public/'));
 app.use('/:id', express.static(path.resolve(__dirname + '/../public/')));
+
 
 app.get('/site/:id', (req, res) => {
   var campid = req.params.id;
@@ -65,5 +67,6 @@ app.get('/site/:id/:photoid/thumbs', (req, res) => {
     }
   );
 });
+
 
 module.exports = app;
