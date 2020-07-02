@@ -1,11 +1,16 @@
 const mongoose = require('mongoose');
-const mongoUri = 'mongodb://localhost/campsite';
+//const mongoUri = 'mongodb://test:test@52.79.61.49:27017/campsite';
 
-mongoose.connect(mongoUri, { useUnifiedTopology: true, useNewUrlParser: true });
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-  console.log('database connected');
+mongoose.connect('mongodb://52.79.61.49:27017/', {
+    auth: {
+        user:'test',
+        password:'test'
+    },
+    authSource:"admin",
+    useUnifiedTopology: true,
+    useNewUrlParser: true
 });
+const db = mongoose.connection;
 
 module.exports = db;
+
